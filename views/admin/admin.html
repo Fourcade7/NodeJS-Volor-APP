@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mb-5">
+      <!-- NAVBAR -->
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary border rounded-bottom"
+      >
+        <div class="container-fluid">
+          <!-- <i class="bi bi-house-door fs-3"></i> -->
+          <i class="bi bi-reception-4 fs-3"></i>
+          <!-- <img src="/images/home-button.png" width="32" height="32" alt=""> -->
+          <a class="navbar-brand ms-2" href="/views/index.html">Volor</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- mx-auto centerga -->
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="/views/plans/plans.html"
+                  >Tariflar</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/views/smspackages/smspackages.html"
+                  >Internet-Paketlar</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/views/phonenumber/phonenumber.html"
+                  >Xizmatlar</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/views/profile/profile.html"
+                  >Profil</a
+                >
+              </li>
+            </ul>
+
+            <ul class="navbar-nav ms-auto">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-person fs-5"></i>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="/views/auth/login.html"
+                    >Kirish</a
+                  >
+                </li>
+              </div>
+
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="/views/auth/register.html"
+                  >Ro'yhatdan o'tish</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- NAVBAR -->
+
+      <!-- NEWS -->
+      <div class="card border-light mb-3 mt-3 rounded" style="max-width: 100%">
+        <div class="card-header">Dashboard Admin</div>
+      </div>
+      <!-- NEWS -->
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="plans-tab" data-bs-toggle="tab" data-bs-target="#plans" type="button" role="tab">
+            Tariflar
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="packages-tab" data-bs-toggle="tab" data-bs-target="#packages" type="button" role="tab">
+            Internet Paketlar
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link " id="sms-tab" data-bs-toggle="tab" data-bs-target="#sms" type="button" role="tab">
+            SMS Paketlar
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="phonenumber-tab" data-bs-toggle="tab" data-bs-target="#phonenumber" type="button" role="tab">
+            Raqamlar
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active " id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab">
+            Foydalanuvchilar
+          </button>
+        </li>
+      </ul>
+      <!-- Tabs -->
+
+      <!-- Tab Content -->
+      <div class="tab-content border-bottom border-end border-start rounded-bottom-2" id="myTabContent">
+        <div class="tab-pane p-3 fade " id="plans" role="tabpanel">
+          <h3>Yangi tarif qo'shish</h3>
+          <p><small>Bu Profile sahifasid.</small></p>
+          <!-- FORM -->
+          <div
+            class="d-flex align-items-center justify-content-center my-auto mt-4 mb-4"
+          >
+            <div class="col-12 col-lg-5 col-md-8 col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <p><small>Tarif nomi</small></p>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="paedittext1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>Malumot</small></p>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="paedittext6"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>GB</small></p>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder="0"
+                        id="paedittext2"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>SMS</small></p>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder="0"
+                        id="paedittext3"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>Daqiqa</small></p>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder="0"
+                        id="paedittext4"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>Oylik to'lov</small></p>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder="0 UZS"
+                        id="paedittext5"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+
+                    <div class="d-grid">
+                      <button id="pabuttonadd" type="submit" class="btn btn-primary">
+                        Qo'shish
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FORM -->
+          <hr class="border-1" />
+
+          <!-- PLANS -->
+          <div class="row row-cols-auto justify-content-center mt-4 plan-row">
+            <div class="col mt-1 mt-sm-1 mt-lg-2 mt-md-2">
+              <div class="card" style="width: 18rem">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-title"><small></small></p>
+                  
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">An item</li>
+                  <li class="list-group-item">A second item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link link-warning">Edit</a>
+                  <a href="#" class="card-link link-danger">Delete</a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <!-- PLANS -->
+        </div>
+        <div class="tab-pane p-3 fade" id="packages" role="tabpanel">
+          <h3>Internet Paketlar</h3>
+          <p><small>Bu Internet paketlarni boshqarish sahifasi.</small></p>
+          <!-- FORM -->
+          <div
+            class="d-flex align-items-center justify-content-center my-auto mt-4 mb-4"
+          >
+            <div class="col-12 col-lg-5 col-md-8 col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <p><small>GB</small></p>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="gbedittext1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>USSD kod</small></p>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="*120*321356545*#"
+                        id="gbedittext2"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>Narxi</small></p>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder="0 UZS"
+                        id="gbedittext3"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+
+                    <div class="d-grid">
+                      <button id="gbbuttonadd" type="submit" class="btn btn-primary">
+                        Qo'shish
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FORM -->
+          <hr class="border-1" />
+          <!-- TABLES -->
+          <table class="table border table-striped mt-4 gb-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">GB</th>
+                <th scope="col">USSD kod ulanish uchun</th>
+                <th scope="col">Narxi</th>
+                <th scope="col">Boshqarish</th>
+              </tr>
+            </thead>
+            <tbody id="gb-tbody">
+              <tr>
+                <th scope="row">1</th>
+                <td>20GB</td>
+                <td>*120*3165465464*#</td>
+                <td>50000 UZS</td>
+                <td>
+                  <a
+                    href="#"
+                    class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Edit</a
+                  >
+                  <a
+                    href="#"
+                    class="link-danger ms-3 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>
+                  <a
+                    href="#"
+                    class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Edit</a
+                  >
+                  <a
+                    href="#"
+                    class="link-danger ms-3 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry the Bird</td>
+                <td>Larry the Bird</td>
+                <td>@twitter</td>
+                <td>
+                  <a
+                    href="#"
+                    class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Edit</a
+                  >
+                  <a
+                    href="#"
+                    class="link-danger ms-3 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Larry the Bird</td>
+                <td>Larry the Bird</td>
+                <td>@twitter</td>
+                <td>
+                  <a
+                    href="#"
+                    class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Edit</a
+                  >
+                  <a
+                    href="#"
+                    class="link-danger ms-3 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- TABLES -->
+        </div>
+        <div class="tab-pane p-3 fade" id="sms" role="tabpanel">
+          <h3>SMS Paketlar</h3>
+          <p><small>Bu sms paketlarni boshqarish sahifasi.</small></p>
+          <!-- FORM -->
+          <div
+            class="d-flex align-items-center justify-content-center my-auto mt-4 mb-4"
+          >
+            <div class="col-12 col-lg-5 col-md-8 col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <p><small>SMS</small></p>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="saedittext1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>USSD kod</small></p>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="*120*321356545*#"
+                        id="saedittext2"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>Narxi</small></p>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder="0 UZS"
+                        id="saedittext3"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+
+                    <div class="d-grid">
+                      <button id="sabuttonadd" type="submit" class="btn btn-primary">
+                        Qo'shish
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FORM -->
+          <hr class="border-1" />
+          <!-- TABLES -->
+          <table class="table border table-striped mt-4 sms-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">SMS</th>
+                <th scope="col">USSD kod ulanish uchun</th>
+                <th scope="col">Narxi</th>
+                <th scope="col">Boshqarish</th>
+              </tr>
+            </thead>
+            <tbody id="sms-tbody">
+             
+            </tbody>
+          </table>
+          <!-- TABLES -->
+        </div>
+
+        <div class="tab-pane p-3 fade" id="phonenumber" role="tabpanel">
+          <h3>Telefon raqamlar</h3>
+          <p>
+            <small
+              >Bu yerda siz telefon raqamlarni boshqarishingiz mumkin.</small
+            >
+          </p>
+          <!-- FORM -->
+          <div
+            class="d-flex align-items-center justify-content-center my-auto mt-4 mb-4"
+          >
+            <div class="col-12 col-lg-5 col-md-8 col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <p><small>Telefon raqam</small></p>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nedittext1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <p><small>Narxi</small></p>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="0 UZS"
+                        id="nedittext2"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+
+                    <div class="d-grid">
+                      <button id="nbutton1" class="btn btn-primary">
+                        Qo'shish
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FORM -->
+          <hr class="border-1" />
+          <!-- TABLES -->
+          <table class="table border table-striped mt-4 phone-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Telefon raqam</th>
+                <th scope="col">Narxi</th>
+                <th scope="col">Boshqarish</th>
+              </tr>
+            </thead>
+            <tbody id="phone-tbody">
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>*120*3165465464*#</td>
+                <td>50000 UZS</td>
+                <td>
+                  <a
+                    href="#"
+                    class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Edit</a
+                  >
+                  <a
+                    href="#"
+                    class="link-danger ms-3 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    >Delete</a
+                  >
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+
+          <!-- TABLES -->
+        </div>
+        <div class="tab-pane p-3 fade  show active" id="users" role="tabpanel">
+          <h3>Foydalanuvchilar</h3>
+          <p>
+            <small
+              >Bu yerda siz foydalanuvchilarni boshqarishingiz mumkin.</small
+            >
+          </p>
+          <!-- TABLES -->
+          <table class="table border table-striped mt-4 users-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ism Familiya</th>
+                <th scope="col">Telefon raqam</th>
+                <th scope="col">Boshqarish</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Aminov Furqatbek</td>
+                <td>+998918607335</td>
+                <td>
+                  <a href="#" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a>
+                  <a href="#" class="link-danger ms-3 link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Delete</a>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+
+          <!-- TABLES -->
+        </div>
+      </div>
+      <!-- Tab Content -->
+
+      <!-- Modal UPDATE SMS-->
+      <div id="modalUpdateSms" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'zgartirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- FORM -->
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >SMS</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="samedittext1"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >USSD kod</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="samedittext2"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Narxi</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="samedittext3"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+              </form>
+              <!-- FORM -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalUptSmsBtn"
+                type="button"
+                class="btn btn-warning"
+                data-bs-dismiss="modal"
+              >
+                O'zgartirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal UPDATE SMS-->
+      <!-- Modal DELETE SMS-->
+      <div id="modalDeleteSms" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'chirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p id="deletedSms">User 1</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalDelBtnSms"
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                O'chirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal DELETE SMS-->
+
+      <!-- Modal UPDATE PLAN-->
+      <div id="modalUpdatePlan" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'zgartirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- FORM -->
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Tarif nomi</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="pmedittext1"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Malumot</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="pmedittext2"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail2" class="form-label"
+                    >GB</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control"
+                    placeholder="+998"
+                    id="pmedittext3"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >SMS</label
+                  >
+                  <input
+                    type="text"
+                    autocomplete="new-password"
+                    class="form-control"
+                    id="pmedittext4"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Minut</label
+                  >
+                  <input
+                    type="text"
+                    autocomplete="off"
+                    class="form-control"
+                    id="pmedittext5"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Oylik to'lov</label
+                  >
+                  <input
+                    type="text"
+                    autocomplete="off"
+                    class="form-control"
+                    id="pmedittext6"
+                  />
+                </div>
+              </form>
+              <!-- FORM -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalUptPlanBtn"
+                type="button"
+                class="btn btn-warning"
+                data-bs-dismiss="modal"
+              >
+                O'zgartirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal UPDATE PLAN-->
+
+      <!-- Modal DELETE PLAN-->
+      <div id="modalDeletePlan" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'chirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p id="deletedPlan">User 1</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalDelBtnPlan"
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                O'chirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal DELETE PLAN-->
+
+      <!-- Modal UPDATE GB-->
+      <div id="modalUpdateGb" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'zgartirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- FORM -->
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >GB</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="gbmedittext1"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >USSD kod</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="gbmedittext2"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Narxi</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="gbmedittext3"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+              </form>
+              <!-- FORM -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalUptGbBtn"
+                type="button"
+                class="btn btn-warning"
+                data-bs-dismiss="modal"
+              >
+                O'zgartirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal UPDATE GB-->
+
+      <!-- Modal DELETE GB-->
+      <div id="modalDeleteGb" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'chirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p id="deletedGb">User 1</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalDelBtnGb"
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                O'chirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal DELETE GB-->
+
+      <!-- Modal UPDATE PHONE-->
+      <div id="modalUpdatePhone" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'zgartirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- FORM -->
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Telefon raqam</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="pdedittext1"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Narxi</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="pdedittext2"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+              </form>
+              <!-- FORM -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalUptPhoneDBtn"
+                type="button"
+                class="btn btn-warning"
+                data-bs-dismiss="modal"
+              >
+                O'zgartirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal UPDATE PHONE-->
+
+      <!-- Modal DELETE PHONE-->
+      <div id="modalDeletePhone" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'chirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p id="deletedPhone">User 1</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalDelBtnPhone"
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                O'chirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal DELETE PHONE-->
+
+      <!-- Modal UPDATE -->
+      <div id="modalUpdate" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'zgartirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- FORM -->
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Ism</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="uedittext1"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Familiya</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="uedittext2"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail2" class="form-label"
+                    >Telefon raqam</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control"
+                    placeholder="+998"
+                    id="uedittext3"
+                    autocomplete="off"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Parol</label
+                  >
+                  <input
+                    type="password"
+                    autocomplete="new-password"
+                    class="form-control"
+                    id="uedittext4"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Parolni qayta kiriting</label
+                  >
+                  <input
+                    type="password"
+                    autocomplete="new-password"
+                    class="form-control"
+                    id="uedittext5"
+                  />
+                </div>
+              </form>
+              <!-- FORM -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalUptBtn"
+                type="button"
+                class="btn btn-warning"
+                data-bs-dismiss="modal"
+              >
+                O'zgartirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal UPDATE-->
+      <!-- Modal DELETE-->
+      <div id="modalDelete" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">O'chirish</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p id="deletedUser">User 1</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Orqaga
+              </button>
+              <button
+                id="modalDelBtn"
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                O'chirish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal DELETE-->
+
+      <!-- Modal Progress-->
+
+      <div id="modalProgress" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Подожди</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>Загрузка...</p>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+                  style="width: 100%"
+                ></div>
+              </div>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Progress -->
+    </div>
+
+    <script type="module" src="smsAdmin.js"></script>
+    <script type="module" src="plansAdmin.js"></script>
+    <script type="module" src="gbAdmin.js"></script>
+    <script type="module" src="phoneNumbersAdmin.js"></script>
+    <script type="module" src="usersTableAdmin.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/CVS": true,
+        "node_modules": true,
+        "images": true,
+        ".env": true,
+        ".gitignore": true,
+        "package-lock.json": true,
+        "package.json": true
+    },
+    "hide-files.files": [
+        "node_modules",
+        "images",
+        ".env",
+        ".gitignore",
+        "package-lock.json",
+        "package.json"
+    ]
+}
