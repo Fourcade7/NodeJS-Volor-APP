@@ -12,16 +12,18 @@ let textview11 = document.getElementById("textview11");
 let headerText = document.getElementById("headerText");
 
 
-const url = "http://localhost:3000/auth/getbyph";
-const phone=getCookie("phone");
-textview1.textContent=phone;
+const url = "http://localhost:3000/auth/getby";
+const id=getCookie("id");
+textview1.textContent=id;
 
-getUserByPhone(url, phone);
+console.log(id);
 
-async function getUserByPhone(url,phone){
+getUserById(url, id);
+
+async function getUserById(url,id){
 
     try{
-        let response = await fetch(`${url}/${phone}`, {
+        let response = await fetch(`${url}/${id}`, {
             method: "GET", // *GET, POST, PUT, DELETE, etc.
             headers: {
               "Content-Type": "application/json",

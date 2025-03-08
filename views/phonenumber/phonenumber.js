@@ -2,6 +2,7 @@ import api from "../admin/crudApiAdmin.js";
 
 let phoneTable = document.querySelector(".phone-table");
 const tbody = document.getElementById("number-tbody");
+const edittextSearch = document.getElementById("edittextSearch");
 
 const urlgetall = "http://localhost:3000/phone/getall";
 const urlgphonenumberupdate = "http://localhost:3000/auth/updatephone";
@@ -15,14 +16,62 @@ let phoneIndex = -1;
 
 let userIndex = getCookie("id");
 
-readAllPhone();
+
+getALlPhone();
+async function getALlPhone(){
+  // let phoneList = await api.getAll(urlgetall);
+  // phonelist = phoneList;
+  // readAllPhone(phonelist);
+  try {
+    let phoneList = await api.getAll(urlgetall);
+    
+    console.log(" 📡 API dan kelgan ma'lumot:", phoneList); // 🔍 Tekshirish
+    
+    if (!Array.isArray(phoneList)) {
+      console.error(" Xatolik: API noto‘g‘ri formatda ma’lumot qaytardi!", phoneList);
+      phoneList = []; // Agar noto‘g‘ri bo‘lsa, bo‘sh massiv qilib qo‘yamiz
+    }
+
+    phonelist = phoneList;
+    readAllPhone(phonelist);
+  } catch (error) {
+    console.error(" Xatolik: API dan ma’lumot olishda muammo!", error);
+    phonelist = []; // Agar API xatolik bersa, bo‘sh massiv qilib qo‘yamiz
+    readAllPhone(phonelist);
+  }
+  
+}
+
+
 
 // READPHONE
+// SEARCH
+
+edittextSearch.addEventListener("input", (event) => {
+  //const searchText = this.value.toLowerCase();
+  const searchText = event.target.value.toLowerCase();
+  const filteredData = phonelist.filter(
+    (phone) =>
+      phone.number.toLowerCase().includes(searchText) ||
+      phone.price.toLowerCase().includes(searchText)
+  );
+  phonelist=filteredData;
+  
+  if(event.target.value==""){
+    getALlPhone();
+  }else{
+    readAllPhone(filteredData);
+  }
+});
+// SEARCH
 
 
-async function readAllPhone() {
-  let phoneList = await api.getAll(urlgetall);
-  phonelist = phoneList;
+function readAllPhone(phoneList) { 
+  console.log(phoneList);
+  if (!Array.isArray(phoneList)) {
+    console.error("❌ Xatolik: readAllPhone() ga noto‘g‘ri ma’lumot yuborildi!", phoneList);
+    return; // Agar noto‘g‘ri bo‘lsa, funksiyani to‘xtatamiz
+  } 
   tbody.innerHTML = ""; // Eski ma'lumotlarni tozalash
   phoneList.forEach((item) => {
     let trow = tableRow(item);
@@ -75,14 +124,18 @@ async function updatePhoneN() {
   };
 
   let uptPhn = await api.update(urlgphonenumberupdate, userIndex, data); //userIndex need
-  console.log(uptPhn.message);
-  setCookie("phone", phonelist[phoneIndex].number, 10);
-  readAllPhone();
+  console.log(uptPhn.phone);
+  
+  
   phoneIndex = -1;
 }
 
 modalPhnBtn.addEventListener("click", (event) => {
   updatePhoneN();
+  edittextSearch.value="";
+  getALlPhone();
+ 
+ 
 });
 //UPDATE PACKAGE PHONE NUMBER
 
@@ -114,3 +167,14 @@ function getCookie(name) {
 function deleteCookie(name) {
   document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 }
+function deleteAllCookies() {
+  let cookies = document.cookie.split("; ");
+
+  for (let i = 0; i < cookies.length; i++) {
+    let [key] = cookies[i].split("=");
+    document.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+  }
+}
+
+// deleteAllCookies(); // Barcha cookie-larni o‘chiradi
+

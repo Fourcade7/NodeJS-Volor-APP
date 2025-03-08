@@ -62,7 +62,8 @@ class AuthController {
     const token = jwt.sign({ userId: user.id }, "secretkey", {
       expiresIn: "30d",
     });
-    res.send({ message: "Login succesful", token });
+    //res.send({ message: "Login succesful", token });
+    res.send(user);
   }
 
   async getAll(req, res) {
