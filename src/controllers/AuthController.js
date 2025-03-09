@@ -139,6 +139,8 @@ class AuthController {
     const id=Number(req.params.id);
     const { username,lastname,phone,password,planName,gb,sms,minute,price} = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
+    //const isMatch = await bcrypt.compare(password, hashedPassword); true or false
+
 
     try{
       const user=await prisma.user.update({

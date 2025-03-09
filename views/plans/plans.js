@@ -8,6 +8,8 @@ let modalConText = document.getElementById("conPlanText");
 let modalConBtn = document.getElementById("modalConBtnPlan");
 
 
+let myModal = document.getElementById("myModal");
+let textViewAlertMessage = document.getElementById("textViewAlertMessage");
 
 let planlist = [];
 let planIndex = -1;
@@ -90,6 +92,12 @@ function planCol(item) {
      
     let conPlan = await api.update(urlconplan, userIndex,data);  //userIndex need
     console.log(conPlan.message);
+    
+    let modalA = new bootstrap.Modal(myModal, {
+      keyboard: false,
+    });
+    modalA.show();
+    textViewAlertMessage.textContent = "Yangi tarifga ulandi";
     readAllplan();
     planIndex = -1;
   }

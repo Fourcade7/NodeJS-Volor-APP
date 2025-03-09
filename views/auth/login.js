@@ -49,7 +49,8 @@ button1.addEventListener("click", (event) => {
         alert1.classList.remove("alert-danger");
         alert1.classList.add("alert-primary");
         alertText1.textContent = result.message;
-        setCookie("id", result.id, 10);
+        setCookie("id", result.id,10);
+        setCookie("username", result.username, 10);
         alertText1.textContent = getCookie("id");
         window.location.href="../index.html";
       } else {

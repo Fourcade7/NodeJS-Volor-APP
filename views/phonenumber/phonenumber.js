@@ -11,6 +11,9 @@ let modalPhn = document.getElementById("modalPhn");
 let modalPhnText = document.getElementById("modalPhnText");
 let modalPhnBtn = document.getElementById("modalPhnBtn");
 
+let myModal = document.getElementById("myModal");
+let textViewAlertMessage = document.getElementById("textViewAlertMessage");
+
 let phonelist = [];
 let phoneIndex = -1;
 
@@ -125,6 +128,11 @@ async function updatePhoneN() {
 
   let uptPhn = await api.update(urlgphonenumberupdate, userIndex, data); //userIndex need
   console.log(uptPhn.phone);
+  let modalA = new bootstrap.Modal(myModal, {
+    keyboard: false,
+  });
+  modalA.show();
+  textViewAlertMessage.textContent = "Yangi raqam ishga tushdi";
   
   
   phoneIndex = -1;

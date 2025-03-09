@@ -16,6 +16,10 @@ let modalPGbText = document.getElementById("modalPGbText");
 let modalPGbBtn = document.getElementById("modalPGbBtn");
 
 
+let myModal = document.getElementById("myModal");
+let textViewAlertMessage = document.getElementById("textViewAlertMessage");
+
+
 
 const urlgetall = "http://localhost:3000/sms/getall";
 const urlgetallgb = "http://localhost:3000/gb/getall";
@@ -131,6 +135,11 @@ function tableRow(item) {
        
       let uptPsms = await api.update(urlpackagesms, userIndex,data);  //userIndex need
       console.log(uptPsms.message);
+      let modalA = new bootstrap.Modal(myModal, {
+        keyboard: false,
+      });
+      modalA.show();
+      textViewAlertMessage.textContent = "Yangi paket ulandi";
       readAllSms();
       smsIndex = -1;
     }
@@ -172,6 +181,11 @@ function tableRow(item) {
        
       let uptPgb = await api.update(urlpackagegb, userIndex,data);  //userIndex need
       console.log(uptPgb.message);
+      let modalA = new bootstrap.Modal(myModal, {
+        keyboard: false,
+      });
+      modalA.show();
+      textViewAlertMessage.textContent = "Yangi paket ulandi";
       readAllSms();
       gbIndex = -1;
     }

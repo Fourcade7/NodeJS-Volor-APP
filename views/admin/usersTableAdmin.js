@@ -112,8 +112,8 @@ usersTable.addEventListener("click", (event) => {
     edittexxt1.value=userlist[index].username;
     edittexxt2.value=userlist[index].lastname;
     edittexxt3.value=userlist[index].phone;
-    // edittexxt4.value=userlist[index].password;
-    // edittexxt5.value=userlist[index].password;
+    //edittexxt4.value=userlist[index].password;
+    //edittexxt5.value=userlist[index].password;
     
     
     console.log(userlist);

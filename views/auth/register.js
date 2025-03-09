@@ -58,7 +58,7 @@ async function registerUser(url, data) {
       setCookie("id", result.user.id, 10);
       console.log(result.user.id);
       alertText1.textContent = getCookie("phone");
-      //window.location.href="login.html";
+      window.location.href="login.html";
     } else {
       alert1.classList.remove("alert-primary");
       alert1.classList.add("alert-danger");

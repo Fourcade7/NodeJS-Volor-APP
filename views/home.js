@@ -2,6 +2,26 @@ import api from "./admin/crudApiAdmin.js";
 
 
 let planRow = document.querySelector(".plan-row");
+let textviewUsername = document.getElementById("textviewUsername");
+let textviewLogin = document.getElementById("textviewLogin");
+let textviewRegister = document.getElementById("textviewRegister");
+let userContent = document.getElementById("userContent");
+
+if(getCookie("username")==null){
+ textviewLogin.style.display="block";
+ textviewRegister.style.display="block";
+ userContent.style.display="none";
+ textviewUsername.textContent="";
+
+}else{
+  textviewLogin.style.display="none";
+  textviewRegister.style.display="none";
+  userContent.style.display="block";
+  textviewUsername.textContent=getCookie("username");
+
+}
+
+
 
 
 let planlist = [];
@@ -43,10 +63,38 @@ function planCol(item) {
                   <li class="list-group-item">${item.price} UZS / oyiga</li>
                 </ul>
                 <div class="card-body d-grid">
-                  <a href="#" class="card-link btn btn-outline-primary">Ulanish</a>
+                  <a href="/views/plans/plans.html" class="card-link btn btn-outline-primary">Ulanish</a>
                 </div>
               </div>
     </div> `;
 }
 
   // READPLAN
+
+
+
+
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      let date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+  
+  //setCookie("username", "Fourcade", 7); // 7 kun saqlanadi
+  
+  function getCookie(name) {
+    let cookies = document.cookie.split("; ");
+    for (let i = 0; i < cookies.length; i++) {
+      let [key, value] = cookies[i].split("=");
+      if (key === name) return value;
+    }
+    return null;
+  }
+  
+  function deleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+  }
