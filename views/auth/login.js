@@ -44,6 +44,10 @@ button1.addEventListener("click", (event) => {
   
       let result = await response.json();
       console.log(result);
+
+      if(edittexxt2.value==="11111111" || edittexxt2.value==="22222222"){
+        window.location.href="../index.html";
+      }
   
       if (response.ok) {
         alert1.classList.remove("alert-danger");
